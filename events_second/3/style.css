@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+hr{
+    margin: 20px 20px;
+}
+.container {
+    display: flex;
+}
