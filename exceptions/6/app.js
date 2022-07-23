@@ -3,7 +3,7 @@
 const numberOfElemInTheArray = +prompt();
 const sortOfArray = (arr) => {
     try {
-        let sortNewArray = []; // [1, 10, 18]
+        let sortNewArray = []; 
         for (let j = 0; j < arr.length; j++) {
             if (arr[j] > 10 && arr[j] < 100) sortNewArray.push(arr[j]);
         }
