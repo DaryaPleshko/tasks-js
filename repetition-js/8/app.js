@@ -47,7 +47,7 @@ nextAudio.addEventListener(`click`, () => {
 
 beforeAudio.addEventListener(`click`, () => {
     if (index === 0) {
-        audio_tag.src = library[index].path
+        audio_tag.src = library.path
     } else {
         index -= 1
         audio_tag.src = library[0].path
