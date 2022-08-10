@@ -1,60 +1,54 @@
 const express = require("express");
-const { Post } = require("./posts.service");
-const { validData } = require("../helper/validation");
+const { Tasks } = require("./service");
+
 const router = express.Router();
 
 router.get("/", (req, res) => {
     try {
-        const posts = new Post;
-        res.status(200).send(posts.getAllPosts());
+        const tasks = new Tasks;
+        res.status(200).send(tasks.getAllData());
     } catch (error) {
         res.status(404).send(error.message);
     }
-})
-
-// router.get("/:id", (req, res) => {
-//     const { id } = req.params;
-//     res.send(id);
-// })
+});
 
 router.get("/:id", (req, res) => {
     try {
         const { id } = req.params;
-        const posts = new Post();
-        res.status(200).send(posts.getPostById(id));
+        const tasks = new Tasks;
+        res.status(200).send(tasks.getById(id));
     } catch (error) {
         res.status(404).send(error.message);
     }
+});
 
-})
-
-router.post("/", validData, (req, res) => {
+router.post("/", (req, res) => {
     try {
-        const posts = new Post();
-        res.status(200).send(posts.createPost(req.body));
+        const tasks = new Tasks();
+        res.status(200).send(tasks.postOfData(req.body));
     } catch (error) {
         res.status(404).send(error.message);
     }
-})
+});
 
 router.put("/:id", (req, res) => {
     try {
         const { id } = req.params;
-        const posts = new Post();
-        res.status(200).send(posts.updatePostById(id, req.body));
+        const tasks = new Tasks();
+        res.status(200).send(tasks.putOfData(id, req.body));
     } catch (error) {
         res.status(404).send(error.message);
     }
-})
+});
 
 router.delete("/:id", (req, res) => {
     try {
         const { id } = req.params;
-        const post = new Post();
-        res.status(200).send(post.deletePostById(id));
+        const tasks = new Tasks();
+        res.status(200).send(tasks.deleteData(id));
     } catch (error) {
         res.status(404).send(error.message);
     }
-})
+});
 
 module.exports = router;
