@@ -31,7 +31,7 @@ class Tasks {
 
     deleteData = (id) => {
         const filterId = this.data.filter(key => key.id != +id);
-        return filterId;
+        return filterId; 
     }
 }
 module.exports = { Tasks }
