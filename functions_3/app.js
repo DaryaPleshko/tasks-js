@@ -105,3 +105,40 @@ const doFactorial = (num) => {
     return (num != 1) ? num * doFactorial(num - 1) : 1;
 }
 console.log(doFactorial(8));
+
+//На входе строка. Необходимо создать функцию, возвращающую true, если это
+//слово анаграмма и false в противном случае
+const checkStr = (str_1, str_2) => {
+    return (str_1.length === str_2.length) ? true : false;
+}
+const checkOfAnagramma = (str_1, str_2) => {
+    if (checkStr(str_1, str_2)) {
+        let anogramma = 0;
+        for (let i = 0; i < str_1.length; i++) {
+            (str_1.includes(str_2[i])) ? anogramma += 1 : null;
+        }
+        return (anogramma === str_2.length) ? true : false;
+    }
+}
+console.log(checkOfAnagramma(`конуc`, `сукно`));
+
+//На входе массив. Реализуйте 2 функции. Первая для проверки, что в массиве
+// только числа. Вторая для поиска максимального значения в массиве. Если
+// результат функции проверки – true, то вызывать новую функцию, возвращающую
+// максимальное значение массива
+const checkArrayOfStr = (array) => {
+    let str = 0;
+    for (let el of array) (isNaN(el)) ? str += 1 : null;
+    return (str === 0) ? true : false;
+}
+const findMax = (array) => {
+    if (checkArrayOfStr(array)) {
+        let bigNumber;
+        for (let i = 0; i < array.length; i++) {
+            if (i === 0) bigNumber = array[i];
+            if (array[i] > bigNumber) bigNumber = array[i];
+        }
+        return bigNumber;
+    } else return `error`;
+}
+console.log(findMax([1, 35, 43, 5, 68, 98]));
