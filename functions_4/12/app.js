@@ -4,7 +4,7 @@
 const iife = (function (obj) {
     count = 0;
     for (let key in obj) (key) ? count++ : null;
-    return count;
+    console.log(count);
 }({
     id: 1,
     name: 'dasha',
@@ -12,5 +12,3 @@ const iife = (function (obj) {
     city: 'Minsk',
     university: 'BSUIR'
 }));
-
-console.log(iife);
