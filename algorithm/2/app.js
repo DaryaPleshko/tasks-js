@@ -4,7 +4,7 @@
 
 const searchBinary = (array, value) => {
     let startIndex = 0;
-    let endIndex = array.length - 1;
+    let endIndex = array.length - 1;       
 
     for (let i = startIndex; i < endIndex; i++) {
         let midl = Math.floor((startIndex + endIndex) / 2);
