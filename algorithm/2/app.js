@@ -3,8 +3,8 @@
 // найдено. Если значение не найдено, возвращается сообщение об ошибке.
 
 const searchBinary = (array, value) => {
-    let startIndex = 0;
-    let endIndex = array.length - 1;       
+    let startIndex = 0;  
+    let endIndex = array.length - 1;
 
     for (let i = startIndex; i < endIndex; i++) {
         let midl = Math.floor((startIndex + endIndex) / 2);
@@ -21,3 +21,4 @@ const searchBinary = (array, value) => {
     }
 }
 searchBinary([1, 2, 3, 4, 5], 3);
+
