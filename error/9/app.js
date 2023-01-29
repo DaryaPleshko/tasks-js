@@ -9,3 +9,27 @@
 // мальчик. Гарантируется, что на пути всегда будет хотя бы один нулевой дом.
 // Добавить проверку, что номера домов – только числа.
 // [5, 1, 2, 3, 0, 1, 5, 0, 2] –> 11 (5 + 1 + 2 + 3 = 11)
+
+const array = [5, 1, 2, `h`, 0, 1, 5, 0, 2];
+
+function checkArray(array_) {
+    let bool = array_.every((el) => !isNaN(el))
+    if (!bool) throw new Error(`Есть буквы`);
+}
+
+function doSum(array_) {
+    try {
+        checkArray(array_);
+        let sumArray = 0;
+        for (let i = 0; i < array_.length; i++) {
+            if (array_[i] === 0) break;
+            sumArray += array_[i];
+        }
+        return sumArray;
+    } catch (error) {
+        return error.message;
+    }
+}
+
+const result = doSum(array)
+console.log(result);
