@@ -6,3 +6,12 @@
 // сторона окажется больше либо равна сумме двух других, то треугольника с
 // такими сторонами не существует
 
+const doTraingle = (a, b, c) => {
+    try {
+        if (a >= b + c || b >= a + c || c >= a + b) throw new Error(`Треугольника не существует`);
+        return true;
+    } catch (error) {
+        return error.message;
+    }
+}
+console.log(doTraingle(1, 3, 1));
