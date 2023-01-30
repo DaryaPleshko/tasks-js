@@ -11,10 +11,10 @@
 
 const isValid = (pwd) => {
     try {
-        if (!/^[a-zA-Zа-яА-Я0-9_\^]+$/g.test(pwd)) throw new Error(`Некорректный ввод`);
+        if (!/^[\w_]{8,}$/g.test(pwd)) throw new Error(`Некорректный ввод`);
         return true;
     } catch (error) {
         return error.message;
     }
 }
-console.log(isValid(`DPleshko_^`));
+console.log(isValid(`DPleshko_`));
