@@ -2,3 +2,13 @@
 // регулярное выражение для данной строки. Если же строка подходит под
 // регулярное выражение, то вывести булевое true, в противном случае бросить
 // исключение и обработать
+
+const check = (str) => {
+    try {
+        if (!/^[A-ZА-Я][a-zа-я]+ [A-ZА-Я][a-zа-я]+\,[0-9]{1,3}$/g.test(str)) throw new Error(`Некорректный ввод`);
+        return true;
+    } catch (error) {
+        return error.message;
+    }
+}
+console.log(check(`Dasha Pleshko,18`));

@@ -8,3 +8,13 @@
 // • Числа
 // • Специальные символы
 // • Длина не менее 8 символов
+
+const isValid = (pwd) => {
+    try {
+        if (!/^[a-zA-Zа-яА-Я0-9_\^]+$/g.test(pwd)) throw new Error(`Некорректный ввод`);
+        return true;
+    } catch (error) {
+        return error.message;
+    }
+}
+console.log(isValid(`DPleshko_^`));
