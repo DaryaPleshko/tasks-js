@@ -4,7 +4,7 @@
 
 const checkStr = (str) => {
     try {
-        if (!/^[0-9]+$/g.test(str)) throw new Error(`Вы ввели строку`);
+        if (!/^[0-9]+$/g.test(str)) throw new Error(`Вы ввели строку`); 
         return true;
     } catch (error) {
         return error.message

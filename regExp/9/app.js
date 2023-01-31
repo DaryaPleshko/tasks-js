@@ -7,3 +7,13 @@
 // "12345“ -> false
 // "a234“ -> false
 
+const check = (pin) => {
+    try {
+        if (pin.length == 5) throw new Error(`Вы ввели не 4-х значный и не 6-ти значный код`);
+        if (!/^[\d]{4,6}$/g.test(pin)) throw new Error(`Некорректный ввод`);
+        return true;
+    } catch (error) {
+        return error.message;
+    }
+}
+console.log(check(`0879`));
