@@ -9,8 +9,7 @@
 
 const check = (pin) => {
     try {
-        if (pin.length == 5) throw new Error(`Вы ввели не 4-х значный и не 6-ти значный код`);
-        if (!/^[\d]{4,6}$/g.test(pin)) throw new Error(`Некорректный ввод`);
+        if (!/^[\d]{4}$/g.test(pin) && !/^[\d]{6}$/g.test(pin)) throw new Error(`Некорректный ввод`);
         return true;
     } catch (error) {
         return error.message;
