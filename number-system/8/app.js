@@ -6,3 +6,14 @@
 // 3 –> false
 // 25 –> true
 // 49 –> true 
+
+const check = (num) => {
+    try {
+        const sqrtNum = Math.round(Math.sqrt(num)) ** 2;
+        if (num != sqrtNum) throw new Error(false);
+        return true;
+    } catch (error) {
+        return error.message;
+    }
+}
+console.log(check(49));
