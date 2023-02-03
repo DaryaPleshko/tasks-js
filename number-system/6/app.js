@@ -17,6 +17,6 @@ const decreasing = (num) => {
         return sortNum;
     } catch (error) {
         return error.message;
-    }
+    } 
 }
 console.log(decreasing(`145263`));

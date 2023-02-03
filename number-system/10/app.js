@@ -5,14 +5,25 @@
 // ooxx –> true
 // xooxx –> false 
 
+const checkLength = (str) => {
+    if (str.length % 2 === 1) throw new Error(false);
+    return true;
+}
+
 const checkStr = (str) => {
     try {
-        if (str.length % 2 === 1) throw new Error(false);
-        const splitStr = str.split('');
+        checkLength(str);
+        const splitStr = str.split('').sort();
         let countFirstLetter = 0,
-            countSecondLetter = 0;
+            countSecondLetter = 0,
+            firstLetter = ``;
         for (let i = 0; i < splitStr.length; i++) {
-
+            if (i === 0) {
+                firstLetter = splitStr[i];
+                countFirstLetter++;
+                continue;
+            }
+            (splitStr[i] === firstLetter) ? countFirstLetter++ : countSecondLetter++
         }
         if (countFirstLetter != countSecondLetter) throw new Error(false);
         return true;
@@ -20,4 +31,4 @@ const checkStr = (str) => {
         return error.message;
     }
 }
-console.log(checkStr(`xooxx`));
+console.log(checkStr(`ooxx`));
