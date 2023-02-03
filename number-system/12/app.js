@@ -6,3 +6,13 @@
 // Написать свой алгоритм. Не использовать методы преобразования числа из 1
 // системы в 2 (например, parseInt). 
 
+const checkOfBinNum = (str, num) => {
+    if (!/^[0-1]+$/g.test(str)) throw new Error(`Число не бинарное`);
+    const reverseBinNum = str.split('').reverse();
+    let numOfDesitich = 0;
+    for (let i = 0; i < reverseBinNum.length; i++) numOfDesitich += reverseBinNum[i] * (2 ** i);
+    if (numOfDesitich != num) throw new Error(`Введенное число при переводе не равно бинарному коду`);
+    return `${str} в 2 системе счисления = ${num}`;
+}
+console.log(checkOfBinNum(`0100011`, 19));
+
