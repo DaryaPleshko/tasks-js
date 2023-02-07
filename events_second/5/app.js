@@ -1,7 +1,7 @@
 // У вас есть кнопка. После каждого нажатия менять ее цвет.
 
 const btn = document.querySelector('.btn');
-let flag = false;
+let flag = false;     
 
 btn.addEventListener('click', () => {
     if (flag) {

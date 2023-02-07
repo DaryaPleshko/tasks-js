@@ -19,5 +19,5 @@ btn.addEventListener('click', () => {
         rez.innerHTML = newArray;
     } catch (error) {
         rez.innerHTML = error.message;
-    }
+    }    
 });
