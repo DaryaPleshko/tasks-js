@@ -3,28 +3,30 @@
 // которой можно будет добавить нового
 // значение в таблицу. 
 
-const btn = document.querySelector('.btn');
-const tr = document.querySelector('tr');
+const btn = document.querySelector('.btn'),
+    tbody = document.querySelector('tbody'),
+    inp = document.querySelector('.inp');
+
 
 const isValid = (inp) => {
-    if (inp.value.length == 0) throw new Error('Вы не ввели ничего');
+    if (inp.value.length === 0) throw new Error('Вы ничего не ввели');
     return true;
 }
 
+let inpValue = [];
 btn.addEventListener('click', () => {
     try {
         isValid(inp);
-
-
-                let td = document.createElement("td");
-                tr.appendChild(td);
-                document.querySelector(`.class-p${i}`).innerHTML = `${i+1}) ${inpValue[i]}`;
-
-
-
-            inp.value = '';
+        inpValue.push(inp.value);
+        for (let i = 0; i < inpValue.length; i++) {
+            let table = document.createElement("table");
+            table.className = `class-td${i}`;
+            tbody.appendChild(table);
+            document.querySelector(`.class-td${i}`).innerHTML = inpValue[i];
+        }
+        inp.value = '';
     } catch (error) {
-        result.innerHTML = error.message;
+        alert(error.message);
         inp.value = '';
     }
 });
