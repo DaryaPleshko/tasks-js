@@ -23,7 +23,7 @@ btn.addEventListener('click', () => {
             table.className = `class-td${i}`;
             tbody.appendChild(table);
             document.querySelector(`.class-td${i}`).innerHTML = inpValue[i];
-        }
+        }                
         inp.value = '';
     } catch (error) {
         alert(error.message);
