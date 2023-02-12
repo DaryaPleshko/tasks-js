@@ -15,7 +15,7 @@ const isValid = (inp) => {
 
 let inpValue = [];
 btn.addEventListener('click', () => {
-    try {
+    try {     
         isValid(inp);
         inpValue.push(inp.value);
         for (let i = 0; i < inpValue.length; i++) {
