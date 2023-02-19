@@ -22,14 +22,9 @@ btn.addEventListener('click', () => {
             arrayValues.push(inp.value);
             inp.value = ``;
             array.innerHTML = `[${arrayValues}]`;
-
-
-            for (let i = 0; i < arrayValues.length; i++)  objValues[i] = i;
-            obj.innerHTML = objValues
+            for (let i = 0; i < arrayValues.length; i++)  objValues[i] = arrayValues[i];
+            obj.innerHTML = JSON.stringify(objValues);
         };
-        // const findKey = (obj) => (obj.hasOwnProperty('10')) ? true : false;
-
-
     } catch (error) {
         alert(error.message);
         inp.value = ``;
