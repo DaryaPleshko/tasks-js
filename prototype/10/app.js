@@ -11,7 +11,7 @@ let a = 10
 a++
 `;
 
-const checkStr = (str) => {
+const checkStr = (str) => {  
     try {
         const code = str.replaceAll(/^\/\*[\w\s\.\(\)\;\:\"\']+\*\/$/gm, ``);
         if (str.length === code.length) throw new Error(`Коммитов нет в коде`);

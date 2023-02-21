@@ -3,14 +3,12 @@
 // первоначального объекта. IIFE
 
 const iife = (function (obj) {
-    let newObj = {};
-    const valueObj = Object.values(obj);
-
+    let newObject = {};
+    for (const key in obj) (!isNaN(obj[key])) ? newObject[key] = obj[key] : null;
+    console.log(newObject);
 }({
     id: 1,
     name: 'dasha',
     years: 18,
     city: 'Minsk'
 }));
-
-console.log(iife);
