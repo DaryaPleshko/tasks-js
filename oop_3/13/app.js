@@ -1,20 +1,22 @@
-// Реализуйте класс ServerById. Обязательными функциями считаются функции
-// middleware, controller, service, repository. Цепочка взаимодействия между
-// методами следующая:
+// Реализуйте класс ServerPost. Обязательными функциями считаются функции
+// middleware, controller, service, repository. Цепочка взаимодействия между методами
+// следующая:
 // middleware -> controller -> service -> repository, где:
 // middleware – функция валидатор
 // controller – функция, принимающая данные. Принимает json
 // service – функция проверки на то что с repository вернулось значение
 // repository – функция, симулирующая БД. Хранит массив данных. Взаимодействие с
-// этим массивом осуществляется только в repository. Массив находится в
-// приложении
+// этим массивом осуществляется только в repository. Массив находится в приложении
 // Задание:
 // на вход подается JSON вида:
 // `{
-// "id": "javascript"
+// "label": "JavaScript", "category": "programmingLanguages", "priority": 1
 // }`
-// Необходимо вывести в консоль найденный элемент массива по id если таковой
-// имеется. В противном случае бросить исключение. Добавить проверки 
+// Неоходимо добавить в массив БД объект только в том случае, если нет совпадений
+// по label. Если совпадения нет, то в объект клиента добавить ключ id со значением
+// label в toLowerCase таким образом, чтобы в БД был запушен объект вида
+// {"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1}
+// Если совпадение есть – ошибка. Добавить проверки 
 
 class ServerGetAll {
     controller(obj) {
@@ -37,13 +39,13 @@ class ServerGetAll {
             { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
             { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
         ];
-        const filtered = array.filter((el) => el.id === obj.id);
-        if (filtered.length === 0) throw new Error('id не существует');
-        return filtered;
+        const filtered = array.filter((el) => el.label === obj.label);
+        if (filtered.length > 0) throw new Error('label уже существует');
+        array.push({ "id": obj.label.toLowerCase(), ...obj });
+        return array;
     }
 }
-
-const obj = { "id": "javascript" }
+const obj = { "label": "hbk", "category": "programmingLanguages", "priority": 1 }
 
 const serverGetAll = new ServerGetAll();
 console.log(serverGetAll.controller(obj));
