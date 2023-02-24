@@ -49,6 +49,6 @@ class ServerPut {
         return filtered;
     }
 }
-let obj = { "id": "javascript", "label": "hihi", "category": "programmingLanguages", "priority": 1 };
+let obj = JSON.parse`{ "id": "javascript", "label": "hihi", "category": "programmingLanguages", "priority": 1 }`;
 const serverPut = new ServerPut();
 console.log(serverPut.middleware(obj));

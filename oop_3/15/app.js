@@ -41,12 +41,11 @@ class ServerDelete {
             { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
             { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
         ];
-        const filtered = array.filter((el) => el.id === obj.id);
-        if (filtered.length === 0) throw new Error('id не существует');
-        array = array.filter(el => el.id != obj.id);
-        return array;
+        const filtered = array.filter(el => el.id != obj.id);
+        if (filtered.length === array.length) throw new Error('id не существует');
+        return filtered;
     }
 }
-let obj = { "id": "javascript" };
+let obj = JSON.parse(`{ "id": "javascript" }`);
 const serverDelete = new ServerDelete();
 console.log(serverDelete.middleware(obj));
