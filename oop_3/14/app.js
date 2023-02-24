@@ -42,9 +42,9 @@ class ServerPut {
             { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
             { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
         ];
-        const filtered = array.filter((el) => el.id === obj.id);
-        if (filtered.length === 0) throw new Error('id не существует');
+        
         let bd = array.filter(el => el.id != obj.id);
+        if (filtered.length === array.length) throw new Error('id не существует');
         bd.push(obj);
         array = bd;
         return array;
