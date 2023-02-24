@@ -43,11 +43,10 @@ class ServerPut {
             { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
         ];
         
-        let bd = array.filter(el => el.id != obj.id);
+        let filtered = array.filter(el => el.id != obj.id);
         if (filtered.length === array.length) throw new Error('id не существует');
-        bd.push(obj);
-        array = bd;
-        return array;
+        filtered.push(obj);
+        return filtered;
     }
 }
 let obj = { "id": "javascript", "label": "hihi", "category": "programmingLanguages", "priority": 1 };
