@@ -1,8 +1,5 @@
 // Реализуйте класс Сonversion, сдержащий метод doBinaryNumber, преобразующий
 // все числа 2 системы счисления в 10
-
-const console = require("console");
-
 class Conversion {
     doBinaryNumber = (number) => {
         try {
