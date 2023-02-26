@@ -17,12 +17,14 @@
 // Если совпадения по id нет – ошибка. Добавить проверки 
 class ServerById {
     middleware = (obj) => {
-        if (obj.length === 0) throw new Error(`Объект пустой`);
-        return this.controller(obj);
+        if (!isNaN(obj.name)) throw new Error(`Это число`);
+        if (!isNaN(obj.age)) throw new Error(`Это буква`);
+        if (!isNaN(obj.id)) throw new Error(`Это буква`);
     }
 
     controller = (obj) => {
         try {
+            this.middleware(obj);
             return this.service(obj)
         } catch (error) {
             return error.message;
@@ -47,4 +49,4 @@ class ServerById {
 }
 const obj = JSON.parse(`{"id": 1, "name": "Test", "age": 1}`);
 const serverGetAll = new ServerById();
-console.log(serverGetAll.middleware(obj));
+console.log(serverGetAll.controller(obj));
