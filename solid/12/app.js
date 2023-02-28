@@ -15,4 +15,4 @@ class Sort {
     }
 }
 const sort = new Sort();
-console.log(sort.sortData([8, 7, 0, 5, 3, 1]));
+console.log(sort.sortData([8, 7, 0, 5, 3, 1])); 
