@@ -3,9 +3,15 @@
 // палиндромом -> true, в противном случае false
 
 class Word {
-    isPalindrom = () => {
-
+    isPalindrom = (str) => {
+        try {
+            const reverseStr = str.split('').reverse().join('');
+            if (str != reverseStr) throw new Error(false);
+            return true;
+        } catch (error) {
+            return error.message;
+        }
     }
 }
 const word = new Word();
-console.log(word.isPalindrom('анна'));
+console.log(word.isPalindrom('шалаш'));
