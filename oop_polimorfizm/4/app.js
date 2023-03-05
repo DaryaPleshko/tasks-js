@@ -5,3 +5,18 @@
 // класса и записать в переменную используя метод super. Далее дополняем
 // переопределенный метод отображением результата в console.
 
+class Pwd {
+    showPwd() {
+        let pwd = ``;
+        for (let i = 0; i < 8; i++) pwd += Math.floor(Math.random() * 9);
+        return pwd;
+    }
+}
+class Validation extends Pwd {
+    showPwd() {
+        console.log(super.showPwd());
+    }
+}
+
+const validation = new Validation();
+validation.showPwd();
