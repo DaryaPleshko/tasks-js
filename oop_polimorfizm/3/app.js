@@ -1,0 +1,25 @@
+// Реализуйте класс NumberArray. NumberArray хранит функцию sumArr, которая
+// заполняет и возвращает массив из 5 рандомных элементов. Класс ConsoleArray
+// является производным по отношению к базовому, родительскому NumberArray и
+// содержит функцию sumArr. Необходимо переопределить sumArr из базового
+// класса записав в переменную используя метод super. Далее посчитать сумму всех
+// элементов массива
+
+class NumberArray {
+    sumArray() {
+        let array = [];
+        for (let i = 0; i < 5; i++) array.push(Math.floor(Math.random() * 99));
+        return array;
+    }
+}
+class ConsoleArray extends NumberArray {
+    sumArray() {
+        const getArray = super.sumArray();
+        let summa = 0;
+        for (let i = 0; i < getArray.length; i++) summa += getArray[i];
+        console.log(`Массив - [${getArray}]. Сумма элементов массива = ${summa}`);
+    }
+}
+
+const consoleArray = new ConsoleArray();
+consoleArray.sumArray();
