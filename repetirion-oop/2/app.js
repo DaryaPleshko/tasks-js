@@ -58,6 +58,6 @@ class Server {
         if (filtered.length > 0) throw new Error('email существует');
         array.push(obj)
         return array;
-    }
+    }          
 }
 const client = new Client();
