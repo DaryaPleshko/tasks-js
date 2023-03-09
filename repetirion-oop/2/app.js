@@ -60,4 +60,4 @@ class Server {
         return array;
     }          
 }
-const client = new Client();
+const client = new Client();           
