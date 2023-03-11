@@ -29,7 +29,7 @@ class Customer extends Person {
     getPhone() {
         return this.phone;
     }
-}
+}  
 
 const customer = new Customer();
 customer.setName('Darya');
