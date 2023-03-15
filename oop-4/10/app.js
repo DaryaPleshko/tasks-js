@@ -53,7 +53,7 @@ class Server {
     }
 
     repository(obj) {
-        const array = [
+        const array = [  
             { "id": 1, "email": "yesenia@mail.ru", "pwd": "pwd12345678" },
             { "id": 2, "email": "hanna@mail.ru", "pwd": "pwd123123" },
             { "id": 3, "email": "stanislau@mail.ru", "pwd": "pwdtest444" },
