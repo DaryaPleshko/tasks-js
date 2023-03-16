@@ -63,7 +63,7 @@ class Server {
         const filtered = array.filter((el) => el.email === obj.email);
         if (filtered.length > 0) throw new Error('email существует');
         array.push(obj)
-        return array;
+        return array;        
     }
 }
 const client = new Client();
