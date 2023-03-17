@@ -50,7 +50,7 @@ class Server {
 
     service(obj) {
         return this.repository(obj);
-    }
+    }       
 
     repository(obj) {
         const array = [  
