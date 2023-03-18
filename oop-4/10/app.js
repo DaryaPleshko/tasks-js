@@ -47,7 +47,7 @@ class Server {
             return error.message;
         }
     }
-
+          
     service(obj) {
         return this.repository(obj);
     }       
