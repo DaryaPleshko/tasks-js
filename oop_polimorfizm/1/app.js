@@ -21,7 +21,7 @@ class Singer extends Worker {
         super(name, surname);
         this.years = years;
         this.birth = birth;
-        this.style = style;
+        this.style = style;        
     }
     getInfo() {
         super.getInfo();
@@ -29,5 +29,5 @@ class Singer extends Worker {
     }
 }
 
-let singer = new Singer(`Darya`, `Pleshko`, 18, `27.04.2004`, `test`);
+let singer = new Singer(`Darya`, `Pleshko`, 18, `27.04.2004`, `test`);       
 singer.getInfo()
