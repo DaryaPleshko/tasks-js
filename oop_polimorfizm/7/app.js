@@ -37,7 +37,8 @@ class Server {
         if (!obj.hasOwnProperty('email')) throw new Error(`Объект не содержит email`);
         if (!obj.hasOwnProperty('pwd')) throw new Error(`Объект не содержит pwd`);
         return this.controller(obj);
-    }
+    } 
+
     controller = (obj) => {
         try {
             return this.service(obj);
@@ -45,9 +46,11 @@ class Server {
             return error.message;
         }
     }
+
     service = (obj) => {
         return this.repository(obj);
     }
+    
     repository = (obj) => {
         const array = [
             { "id": 1, "email": "yesenia@mail.ru", "pwd": "pwd12345678" },

@@ -15,6 +15,7 @@ class Validation extends StringValue {
         super(value);
         this.confirmValue = confirmValue;
     }
+    
     getValue() {
         try {
             if (!isNaN(this.value)) throw new Error(`It is a number`)

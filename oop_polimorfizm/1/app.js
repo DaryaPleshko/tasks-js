@@ -25,7 +25,7 @@ class Singer extends Worker {
     }
     getInfo() {
         super.getInfo();
-        console.log(`${this.years} ${this.birth} ${this.style}`);
+        console.log(`${this.years} ${this.birth} ${this.style}`);                 
     }
 }
 
