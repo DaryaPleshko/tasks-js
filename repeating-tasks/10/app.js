@@ -9,7 +9,7 @@ const checkOfDir = (str) => {
 };
 const cutOfDir = (str) => {
     try {
-        const bool = checkOfDir(str);
+        checkOfDir(str);
         const dirSplitOfSlesh = str.split('/');
         const last = dirSplitOfSlesh[dirSplitOfSlesh.length - 1];
         return last;

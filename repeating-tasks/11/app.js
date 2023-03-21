@@ -19,12 +19,11 @@ const arrOfStr = (array) => {
 
 const sortOfNum = (array) => {
     try {
-        if (arrOfStrOrNum(array)) {
-            const arrStr = arrOfStr(array);
-            const filterArr = arrStr.filter(el => el[0] === '1' || el[0] === '2' || el[0] === '5')
-            if (!filterArr) throw new Error('в массиве нет чисел начинающихся с 1,2 или 5');
-            return filterArr;
-        }
+        arrOfStrOrNum(array)
+        const arrStr = arrOfStr(array);
+        const filterArr = arrStr.filter(el => el[0] === '1' || el[0] === '2' || el[0] === '5')
+        if (!filterArr) throw new Error('в массиве нет чисел начинающихся с 1,2 или 5');
+        return filterArr;
     } catch (error) {
         return error;
     }

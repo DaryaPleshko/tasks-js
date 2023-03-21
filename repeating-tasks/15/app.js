@@ -7,11 +7,10 @@ const checkOfStr = (str) => {
 };
 const checkOfPalindrom = (str) => {
     try {
-        if (checkOfStr(str)) {
-            const strReverse = str.split('').reverse().join('');
-            if (str === strReverse) return true;
-            else throw new Error('Слово не является палиндромом');
-        }
+        checkOfStr(str)
+        const strReverse = str.split('').reverse().join('');
+        if (str != strReverse) throw new Error('Слово не является палиндромом');
+        return true;
     } catch (err) {
         return err;
     }

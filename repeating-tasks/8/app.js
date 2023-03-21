@@ -4,8 +4,8 @@
 const newAdress = 'https://russianblogs.com';
 const checkNewAdress = (str) => {
     try {
-        if (/^https\:\/\/[a-zA-Z0-9]+\.[a-z]+$/g.test(str)) return true;
-        else throw new Error('not found');
+        if (!/^https\:\/\/[a-zA-Z0-9]+\.[a-z]+$/g.test(str)) throw new Error('not found');
+        return true;
     } catch (err) {
         return err;
     }

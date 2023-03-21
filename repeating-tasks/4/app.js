@@ -3,16 +3,14 @@
 const arr = ['hello', 'Hanna', 'and', 'dyadya Stas'];
 const checkOfArray = (array) => {
     sumOfStrInArray = 0;
-    for (let i = 0; i < array.length; i++) {
-        if (!isNaN(array[i])) sumOfStrInArray += 1;
-    }
-    if (sumOfStrInArray === 0) return true;
-    else throw new Error('вы ввели число');
+    for (let i = 0; i < array.length; i++) if (!isNaN(array[i])) sumOfStrInArray += 1;
+    if (sumOfStrInArray > 0) throw new Error('вы ввели число');
+    return true;
 }
 const mainFunction = (array) => {
     try {
-        const boolOfCheckArray = checkOfArray(array);
-        if (boolOfCheckArray) return array.join('');
+        checkOfArray(array);
+        return array.join('');
     } catch (err) {
         return err;
     }

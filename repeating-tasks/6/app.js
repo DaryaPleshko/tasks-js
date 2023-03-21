@@ -3,8 +3,8 @@
 const emailStr = 'hannapleshko@mail.ru';
 const mailCheck = (str) => {
     try {
-        if (str.includes('@')) return true;
-        else throw new Error(`В строке нет @`);
+        if (str.includes('@')) throw new Error(`В строке нет @`);
+        return true;
     } catch (error) {
         return error;
     }

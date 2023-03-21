@@ -8,21 +8,15 @@ const checkOfArray = (array) => {
 }
 const checkOfNum = (array) => {
     let countError = 0;
-    for (let key of array) {
-        (!isNaN(key)) ? countError += 1 : null;
-    }
+    for (let key of array) (!isNaN(key)) ? countError += 1 : null;
     if (countError == 0) return true;
     else throw new Error('it is a string');
 }
 const checkOfNumInArray = (array) => {
+    checkOfNum(array);
+    checkOfArray(array);
     let newArray = [];
-    const boolOfCheckOfNum = checkOfNum(array);
-    const boolOfArray = checkOfArray(array);
-    if (boolOfArray && b) {
-        for (let el of array) {
-            (el % 2 == 0) ? newArray.push(el) : null;
-        }
-        return newArray;
-    }
+    for (let el of array) (el % 2 == 0) ? newArray.push(el) : null;
+    return newArray;
 }
 console.log(checkOfNumInArray(dataParse));
