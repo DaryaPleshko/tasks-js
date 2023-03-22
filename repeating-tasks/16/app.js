@@ -7,7 +7,7 @@ const checkForNumOfLetter = (firstStr, secondStr) => {
     else throw new Error('длины строк разные');
 };
 const checkForAnagrama = (firstStr, secondStr) => {
-    try {
+    try {           
         let countLetter = 0;
         if (checkForNumOfLetter(firstStr, secondStr)) {
             for (let i = 0; i < firstStr.length; i++) {
