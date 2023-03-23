@@ -1,34 +1,34 @@
 const e = require('express');
-const { arrobj } = require('./obj')
+const { arrObj } = require('./obj')
 
 const task = () => {
-    if (arrobj.length === 0) throw new Error('array is empty')
-    return arrobj;
+    if (arrObj.length === 0) throw new Error('array is empty')
+    return arrObj;
 }
 
 const taskById = (clientid) => {
-    const objFilt = arrobj.filter((el) => el.id === clientid)
+    const objFilt = arrObj.filter((el) => el.id === clientid)
     if (objFilt.length === 0) throw new Error('not found')
     return objFilt;
 }
 
 const createTask = (obj) => {
-    arrobj.push(obj)
-    if (arrobj.length === 0) {
+    arrObj.push(obj)
+    if (arrObj.length === 0) {
         throw new Error('not found')
     } else {
-        console.log(arrobj)
+        console.log(arrObj)
         return obj
     }
 }
 
 const putMetod = (obj) => {
-    const objFilt = arrobj.filter((key) => key.id === obj)
-    arrobj.push(objFilt)
-    if (arrobj.length === 0) {
+    const objFilt = arrObj.filter((key) => key.id === obj)
+    arrObj.push(objFilt)
+    if (arrObj.length === 0) {
         throw new Error('not found')
     } else {
-        console.log(arrobj)
+        console.log(arrObj)
         return obj;
     }
 }

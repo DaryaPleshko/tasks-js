@@ -19,7 +19,7 @@ class Figure {
     }
 }
 class Circle extends Figure {
-    name;
+    name;      
     radius;
     pi;
 
