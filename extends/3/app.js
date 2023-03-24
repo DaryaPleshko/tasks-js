@@ -32,4 +32,4 @@ const singer = new Singer();
 singer.setFullName('Darya', 'Pleshko');
 singer.setMoreInfo(18, '27.05.2000', 'test');
 console.log(singer.getFullName());
-console.log(singer.getMoreInfo()); 
+console.log(singer.getMoreInfo());    
