@@ -47,7 +47,7 @@ class Server {
             return error.message;
         }
     }
-          
+        
     service(obj) {
         return this.repository(obj);
     }       
@@ -60,6 +60,7 @@ class Server {
             { "id": 4, "email": "german@mail.ru", "pwd": "pwdqqq111" },
             { "id": 5, "email": "maria@mail.ru", "pwd": "pwd746552" }
         ];
+           
         const filtered = array.filter((el) => el.email === obj.email);
         if (filtered.length > 0) throw new Error('email существует');
         array.push(obj)
