@@ -49,7 +49,7 @@ class Server {
     }
         
     service(obj) {
-        return this.repository(obj);
+        return this.repository(obj);          
     }       
 
     repository(obj) {
