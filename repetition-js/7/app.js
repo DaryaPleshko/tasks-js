@@ -11,7 +11,7 @@ btn.addEventListener(`click`, () => {
         for (let i = 0; i < input; i++) {
             if (i % 3 === 0) result.push(i);
         }
-        resDom.innerHTML = result;
+        resDom.innerHTML = result;     
     } catch (error) {
         alert(error.message);
     }
