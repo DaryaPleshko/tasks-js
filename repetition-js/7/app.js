@@ -14,5 +14,5 @@ btn.addEventListener(`click`, () => {
         resDom.innerHTML = result;     
     } catch (error) {
         alert(error.message);
-    }
+    }   
 });
