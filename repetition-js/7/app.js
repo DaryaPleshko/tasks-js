@@ -3,7 +3,7 @@
 
 const btn = document.querySelector(`.btn`);
 
-const resDom = document.querySelector(`.res`);
+const resDom = document.querySelector(`.res`);                   
 const result = [];
 btn.addEventListener(`click`, () => {
     try {
