@@ -8,5 +8,5 @@ btn.addEventListener(`click`, () => {
         inp1 = document.querySelector(`.input1`).value,
         inp2 = document.querySelector(`.input2`).value;
         const resVar = `${inp0}${inp1}${inp2}`;
-    res.innerHTML = `Cancat: ${resVar}`;
+    res.innerHTML = `Cancat: ${resVar}`;     
 });
