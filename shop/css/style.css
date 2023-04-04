@@ -4,12 +4,19 @@
     font-family: 'Oswald', sans-serif;
 }
 
-.label {
+.logo {
     margin-top: 20px;
+    font-family: 'Special Elite', cursive;
     color: rgba(46, 46, 46, 0.877);
     font-size: 40px;
     display: flex;
     justify-content: center;
+}
+
+.label{
+    font-family: 'Oswald', sans-serif;
+    margin-top: 15px;
+    font-size: 18px;
 }
 
 .main-choice {
@@ -86,7 +93,7 @@ hr {
 }
 
 .about-the-brand,
-.contact{
+.contact {
     font-size: 25px;
     display: flex;
     justify-content: center;
@@ -118,27 +125,22 @@ hr {
 }
 
 .flex-content p {
-    margin: 1.7%;
+    margin: 1.6%;
     font-family: 'Special Elite', cursive;
     font-size: 17px;
 }
 
 .instagram,
-.telegram,
-.twitter {
+.telegram {
     background: url('../assets/inst.svg') no-repeat;
     width: 35px;
     height: 35px;
     background-size: contain;
-    margin: 20px 10px 0 0;
+    margin-top: 20px;
     display: block;
 }
 
 .telegram {
     background-image: url('../assets/telegram.svg');
-}
-
-.twitter {
-    background-image: url('../assets/twitter.svg');
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
