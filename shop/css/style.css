@@ -13,7 +13,7 @@
     justify-content: center;
 }
 
-.label{
+.label {
     font-family: 'Oswald', sans-serif;
     margin-top: 15px;
     font-size: 18px;
@@ -143,4 +143,156 @@ hr {
 .telegram {
     background-image: url('../assets/telegram.svg');
     margin-bottom: 60px;
+}
+
+.catalog-top,
+.catalog-jeans,
+.catalog-skirt,
+.catalog-dress,
+.catalog-jacket {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.img-top-first,
+.img-top-second,
+.img-top-third,
+.img-jeans-first,
+.img-jeans-second,
+.img-jeans-third,
+.img-skirt-first,
+.img-skirt-second,
+.img-dress-first,
+.img-dress-second,
+.img-dress-third,
+.img-jacket-first,
+.img-jacket-second,
+.img-jacket-third {
+    background: url('../assets/topFirst.jpg') no-repeat;
+    width: 350px;
+    height: 350px;
+    background-size: contain;
+    margin: 60px 40px 20px 40px;
+    display: block;
+}
+
+.img-top-second {
+    background: url('../assets/topSecond.jpg') no-repeat;
+    background-size: contain;
+}
+
+.img-top-third {
+    background: url('../assets/topThird.jpg') no-repeat;
+    background-size: contain;
+}
+
+.img-jeans-first {
+    background: url('../assets/jeans1.JPG') no-repeat;
+    background-size: contain;
+}
+
+.img-jeans-second {
+    background: url('../assets/jeans2.JPG') no-repeat;
+    background-size: contain;
+}
+
+.img-jeans-third {
+    background: url('../assets/jeans3.JPG') no-repeat;
+    background-size: contain;
+}
+
+.img-skirt-first {
+    background: url('../assets/skirt1.JPG') no-repeat;
+    background-size: contain;
+}
+
+.img-skirt-second {
+    background: url('../assets/skirt2.JPG') no-repeat;
+    background-size: contain;
+}
+
+.img-dress-first {
+    background: url('../assets/dress1.JPG') no-repeat;
+    background-size: contain;
+}
+
+.img-dress-second {
+    background: url('../assets/dress2.JPG') no-repeat;
+    background-size: contain;
+}
+
+.img-dress-third {
+    background: url('../assets/dress3.JPG') no-repeat;
+    background-size: contain;
+}
+
+.img-jacket-first {
+    background: url('../assets/верхняяОдежда11.JPG') no-repeat;
+    background-size: contain;
+}
+
+.img-jacket-second {
+    background: url('../assets/верхняяОдежда2.JPG') no-repeat;
+    background-size: contain;
+}
+
+.img-jacket-third {
+    background: url('../assets/верхняяОдежда3.JPG') no-repeat;
+    background-size: contain;
+}
+
+.left-arrow-catalog {
+    background: url('../assets/arrow1.svg') no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    display: block;
+    margin-top: 220px;
+}
+
+.right-arrow-catalog {
+    background: url('../assets/arrow2.svg') no-repeat;
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    display: block;
+    margin-top: 222px;
+}
+
+.catalog-top p,
+.catalog-jeans p,
+.catalog-skirt p,
+.catalog-dress p,
+.catalog-jacket p {
+    display: flex;
+    justify-content: center;
+}
+
+.choice-top,
+.choice-jeans,
+.choice-skirt,
+.choice-dress,
+.choice-jacket {
+    margin: 80px 180px;
+}
+
+.choice-top p:not(:last-child),
+.choice-jeans p:not(:last-child),
+.choice-skirt p:not(:last-child),
+.choice-dress p:not(:last-child),
+.choice-jacket p:not(:last-child) {
+    text-decoration: none;
+    border-right: 2px rgba(197, 197, 197, 0.735) solid;
+    padding-right: 100px;
+}
+
+.choice-top p:first-child,
+.choice-jeans p:nth-child(2),
+.choice-skirt p:nth-child(3),
+.choice-dress p:nth-child(4),
+.choice-jacket p:last-child {
+    color: rgba(48, 48, 48, 0.418);
+    text-decoration: underline;
+    text-underline-offset: 10px;
 }
