@@ -16,7 +16,7 @@
 // клиента уникальна и массив репозитория не содержит такую почту, то сохранить
 // клиентский объект в массив
 
-class Client {          
+class Client {            
     doRegistration = () => {
         const email = document.querySelector('.email'),
             password = document.querySelector('.password');
