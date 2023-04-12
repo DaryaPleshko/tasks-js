@@ -8,4 +8,4 @@ const check = (str) => {
     return `гласных - ${glas}, согласных - ${sogl}`;
 }
 
-console.log(check(`hello world`));
+console.log(check(`hello world`));             
