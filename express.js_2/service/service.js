@@ -6,7 +6,7 @@ const getEnvironment = () => {
     return array;
 }
 
-const getEnvironmentById = (id) => {
+const getEnvironmentById = (id) => {   
     const filtered = array.filter(el => el.id == id);
     return filtered;
 }
