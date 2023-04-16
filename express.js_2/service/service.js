@@ -6,9 +6,14 @@ const getEnvironment = () => {
     return array;
 }
 
-const getEnvironmentById = (id) => {   
+const getEnvironmentById = (id) => {
     const filtered = array.filter(el => el.id == id);
     return filtered;
 }
 
-module.exports = { getEnvironment, getEnvironmentById };
+const createValue = (obj) => {
+    array.push(obj);
+    return array;
+}
+
+module.exports = { getEnvironment, getEnvironmentById, createValue };
