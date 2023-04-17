@@ -20,10 +20,10 @@ app.get('/:id', (request, response) => {
 app.post('/', (request, response) => {
     try {
         const data = createValue(request.body);
-        response.send(data);
+        response.status(200).send(data);
     } catch (error) {
         response.status(404).send(error.message);
     }
-})
+});
 
 app.listen(3000, () => console.log(`server is running`));

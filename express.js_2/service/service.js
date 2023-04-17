@@ -7,7 +7,7 @@ const getEnvironment = () => {
 }
 
 const getEnvironmentById = (id) => {
-    const filtered = array.filter(el => el.id == id);
+    const filtered = array.filter(el => el.id == id);              
     return filtered;
 }
 
