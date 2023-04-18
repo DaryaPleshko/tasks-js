@@ -1,5 +1,5 @@
 const express = require('express');
-const { getEnvironment, getEnvironmentById, createValue } = require('./service/service');
+const { getEnvironment, getEnvironmentById, createValue, putOfData } = require('./service/service');
 const app = express();
 
 app.get('/', (request, response) => {
@@ -24,6 +24,11 @@ app.post('/', (request, response) => {
     } catch (error) {
         response.status(404).send(error.message);
     }
+});
+
+app.put("/:id", (request, response) => {
+        const { id } = request.params;
+        response.status(200).send(putOfData(id, request.body));
 });
 
 app.listen(3000, () => console.log(`server is running`));

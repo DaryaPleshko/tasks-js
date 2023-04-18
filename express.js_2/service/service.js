@@ -7,7 +7,7 @@ const getEnvironment = () => {
 }
 
 const getEnvironmentById = (id) => {
-    const filtered = array.filter(el => el.id == id);              
+    const filtered = array.filter(el => el.id == id);
     return filtered;
 }
 
@@ -16,4 +16,10 @@ const createValue = (obj) => {
     return array;
 }
 
-module.exports = { getEnvironment, getEnvironmentById, createValue };
+const putOfData = (id, newValue) => {
+    const filterId = array.filter(key => key.id === id);
+    filterId.push({ ...id, ...newValue });
+    return filterId;
+}
+
+module.exports = { getEnvironment, getEnvironmentById, createValue, putOfData };
