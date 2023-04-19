@@ -1,34 +1,30 @@
 const express = require('express');
-const { getEnvironment, getEnvironmentById, createValue, putOfData } = require('./service/service');
+const { getData, createData, updateData, deleteData } = require('./service/service');
+const bodyParser = require('body-parser');
+
 const app = express();
 
+app.use(bodyParser.json());
+
 app.get('/', (request, response) => {
-    const result = getEnvironment();
+    const result = getData();
     response.send(result)
 });
 
-app.get('/:id', (request, response) => {
-    try {
-        const { id } = request.params;
-        const result = getEnvironmentById(id);
-        response.send(result);
-    } catch (error) {
-        response.status(404).send(error.message);
-    }
-});
-
 app.post('/', (request, response) => {
-    try {
-        const data = createValue(request.body);
-        response.status(200).send(data);
-    } catch (error) {
-        response.status(404).send(error.message);
-    }
+    const { name, age } = request.body;
+    response.status(200).send(createData(name, age));
 });
 
 app.put("/:id", (request, response) => {
-        const { id } = request.params;
-        response.status(200).send(putOfData(id, request.body));
+    const { id } = request.params;
+    const { name, age } = request.body;
+    response.status(200).send(updateData(id, name, age));
 });
 
+app.delete('/:id', (request, response) => {
+    const { id } = request.params;
+    const data = deleteData(id);
+    response.send(data);
+})
 app.listen(3000, () => console.log(`server is running`));
