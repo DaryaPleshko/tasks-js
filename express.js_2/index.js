@@ -18,12 +18,12 @@ app.post('/', (request, response) => {
 
 app.put("/:id", (request, response) => {
     const { id } = request.params;
-    const { name, age } = request.body;
+    const { name, age } = request.body;            
     response.status(200).send(updateData(id, name, age));
 });
 
 app.delete('/:id', (request, response) => {
-    const { id } = request.params;
+    const { id } = request.params;   
     const data = deleteData(id);
     response.send(data);
 })
