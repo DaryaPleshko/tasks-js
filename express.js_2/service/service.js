@@ -30,9 +30,9 @@ const updateData = (id, name, age) => {
     }
 }
 
-function deleteData(id) {
+function deleteData(id) {       
     const filtered = array.filter(el => el.id != id);
-    return filtered;
+    return filtered;      
 }
 
 module.exports = { getData, createData, updateData, deleteData };
