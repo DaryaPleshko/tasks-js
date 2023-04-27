@@ -19,7 +19,7 @@ router.post('/', (request, response) => {
 router.put('/:id', (request, response) => {
     const { id } = request.params;
     const { name, surname, email, pwd } = request.body;
-    response.status(200).send(updateUser(id, name, surname, email, pwd));
+    response.status(200).send(updateUser(id, name, surname, email, pwd));               
 });
 
 router.delete('/:id', (request, response) => {
