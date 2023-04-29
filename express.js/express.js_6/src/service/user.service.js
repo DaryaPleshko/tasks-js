@@ -24,7 +24,7 @@ const updateUser = (id, name, surname, email, pwd) => {
     const data = JSON.parse(fs.readFileSync(path));
     const filtered = data.filter(el => el.id != id);
     if (filtered.length == data.length) throw new Error('id is empty');
-    filtered.push({ id, name, surname, email, pwd });
+    filtered.push({ id, name, surname, email, pwd });         
     return filtered;
 }
 
