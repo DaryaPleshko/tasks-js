@@ -26,7 +26,7 @@ router.put('/:id', (request, response) => {
         const { name, surname, email, pwd } = request.body;
         response.status(200).send(updateUser(id, name, surname, email, pwd));
     } catch (error) {
-        response.status(404).send(error.message);
+        response.status(404).send(error.message);       
     }
 });
 
