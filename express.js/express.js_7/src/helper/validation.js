@@ -16,8 +16,8 @@ const isValidUserData = (request, response, next) => {
     next();
 };
 
-const isValidUserId = (request, response, next) => {
-    const { id } = request.params;
+const isValidUserId = (request, response, next) => {                  
+    const { id } = request.params;          
     if (!id) throw new Error(`You didn't pass id`);
     if (isNaN(id)) throw new Error(`Id must be a number`);
 
