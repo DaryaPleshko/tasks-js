@@ -13,7 +13,7 @@ const isValidUserData = (request, response, next) => {
     if (!pwd) throw new Error(`You didn't pass the pwd`);
     if (pwd.length < 9) throw new Error(`Password less than 9 characters`);
 
-    next();
+    next();           
 };
 
 const isValidUserId = (request, response, next) => {                  
