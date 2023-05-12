@@ -1,4 +1,4 @@
-const { getAllEnvironmentDB, createEnvironmentDB } = require('../repository/environment.repository');
+const { getAllEnvironmentDB, createEnvironmentDB, updateEnvironmentDB } = require('../repository/environment.repository');
 
 const getAllEnvironment = async () => {
     const data = await getAllEnvironmentDB();
@@ -10,4 +10,9 @@ const createEnvironment = async (label, category, priority) => {
     return data;
 }
 
-module.exports = { getAllEnvironment, createEnvironment }
+const updateEnvironment = async (id, label, category, priority) => {
+    const data = await updateEnvironmentDB(id, label, category, priority);
+    return data;
+}
+
+module.exports = { getAllEnvironment, createEnvironment, updateEnvironment }
