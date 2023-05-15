@@ -1,5 +1,5 @@
 const express = require('express');
-const { getAllEnvironment, createEnvironment, updateEnvironment } = require('../service/environment.servise');
+const { getAllEnvironment, getEnvironmentById, createEnvironment, updateEnvironment, deleteEnvironment } = require('../service/environment.servise');
 const { buildResponse } = require('../helper/buildResponse');
 
 const route = express.Router();
@@ -12,6 +12,16 @@ route.get('/', async (request, response) => {
                 buildResponse(response, error.message, 500);
         }
 });
+
+route.get('/:id', async (request, response) => {
+        try {
+                const { id } = request.params;
+                const data = await getEnvironmentById(id);
+                buildResponse(response, data, 200);
+        } catch (error) {
+                buildResponse(response, error.message, 500);
+        }
+})
 
 route.post('/', async (request, response) => {
         try {
@@ -33,5 +43,15 @@ route.put('/:id', async (request, response) => {
                 buildResponse(response, error.message, 500);
         }
 });
+
+route.delete('/:id', async (request, response) => {
+        try {
+                const { id } = request.params;
+                const data = await deleteEnvironment(id);
+                buildResponse(response, data, 200);
+        } catch (error) {
+                buildResponse(response, error.message, 500);
+        }
+})
 
 module.exports = route;

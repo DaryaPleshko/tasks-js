@@ -1,7 +1,12 @@
-const { getAllEnvironmentDB, createEnvironmentDB, updateEnvironmentDB } = require('../repository/environment.repository');
+const { getAllEnvironmentDB, getEnvironmentByIdDB, createEnvironmentDB, updateEnvironmentDB, deleteEnvironmentDB } = require('../repository/environment.repository');
 
 const getAllEnvironment = async () => {
     const data = await getAllEnvironmentDB();
+    return data;
+}
+
+const getEnvironmentById = async (id) => {
+    const data = await getEnvironmentByIdDB(id);
     return data;
 }
 
@@ -15,4 +20,9 @@ const updateEnvironment = async (id, label, category, priority) => {
     return data;
 }
 
-module.exports = { getAllEnvironment, createEnvironment, updateEnvironment }
+const deleteEnvironment = async (id) => {
+    const data = await deleteEnvironmentDB(id);
+    return data;
+}
+
+module.exports = { getAllEnvironment, createEnvironment, updateEnvironment, getEnvironmentById, deleteEnvironment }
