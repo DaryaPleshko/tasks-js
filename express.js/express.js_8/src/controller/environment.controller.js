@@ -6,7 +6,7 @@ const route = express.Router();
 
 route.get('/', async (request, response) => {
         try {
-                const data = await getAllEnvironment();
+                const data = await getAllEnvironment();              
                 buildResponse(response, data, 200);
         } catch (error) {
                 buildResponse(response, error.message, 500);
