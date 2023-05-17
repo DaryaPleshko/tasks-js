@@ -9,7 +9,7 @@ route.get('/', async (request, response) => {
                 const data = await getAllEnvironment();              
                 buildResponse(response, data, 200);
         } catch (error) {
-                buildResponse(response, error.message, 500);
+                buildResponse(response, error.message, 500);    
         }
 });
 
