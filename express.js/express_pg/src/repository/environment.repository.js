@@ -11,7 +11,7 @@ const getEnvironmentByIdDb = async (id) => {
   const connect = await pool.connect();
 
   const sql = `SELECT * FROM environment`;
-  const result = (await client.query(sql)).rows;
+  const result = (await client.query(sql)).rows;       
 
   return result;
 }
