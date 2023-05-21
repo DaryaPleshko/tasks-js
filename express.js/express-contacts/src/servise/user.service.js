@@ -1,4 +1,4 @@
-const { getAllDataDb } = require('../repository/user.repository');
+const { getAllDataDb, getDataByIdDb } = require('../repository/user.repository');
 
 const getAllData = async () => {
     const data = await getAllDataDb();
@@ -6,4 +6,10 @@ const getAllData = async () => {
     return data;
 }
 
-module.exports = { getAllData }
+const getDataById = async (id) => {
+    const data = await getDataByIdDb(id);
+    if (!data.length) throw new Error('Array with this id is empty');
+    return data;
+}
+
+module.exports = { getAllData, getDataById }
