@@ -45,7 +45,7 @@ route.put('/:id', isValidUserId, isValidUserBody, async (request, response) => {
   }
 });
 
-route.patch('/:id', isValidUserId, isValidUserBody, async (request, response) => {
+route.patch('/:id', isValidUserId, async (request, response) => {
   try {
     const { id } = request.params;
     const clientData = request.body;

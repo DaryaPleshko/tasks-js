@@ -26,11 +26,10 @@ const updateData = async (id, name, surname, birth, city, age) => {
 
 const patchData = async (id, clientData) => {
   const data = await patchDataDb(id, clientData);
-  if (!data.length) throw new Error(`Array with this id is empty`);
   return data;
 }
 
-const deleteData = async id => {
+const deleteData = async (id) => {
   const data = await deleteDataDb(id);
   if (!data.length) throw new Error(`Array with this id is empty`);
   return data;
