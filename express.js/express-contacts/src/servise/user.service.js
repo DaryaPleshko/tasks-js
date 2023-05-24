@@ -24,8 +24,8 @@ const updateData = async (id, name, surname, birth, city, age) => {
   return data;
 };
 
-const patchData = async (id, name, surname, birth, city, age) => {
-  const data = await patchDataDb(id, name, surname, birth, city, age);
+const patchData = async (id, clientData) => {
+  const data = await patchDataDb(id, clientData);
   if (!data.length) throw new Error(`Array with this id is empty`);
   return data;
 }

@@ -11,7 +11,7 @@ const isValidUserBody = (request, response, next) => {
     if (!surname) throw new Error('surname is empty');
     if (!birth) throw new Error('birth is empty');
     if (!city) throw new Error('city is empty');
-    if (!age) throw new Error('age is empty');
+    if (age <= 0) throw new Error(`age is a negative number`);
     next();
 }
 

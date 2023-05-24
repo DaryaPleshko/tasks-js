@@ -76,9 +76,28 @@ const updateDataDb = async (id, name, surname, birth, city, age) => {
   }
 };
 
-const patchDataDb = async (id, name, surname, birth, city, age) => {
+const patchDataDb = async (id, clientData) => {
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
 
-}
+    const sql = `
+    SELECT users.id, users.name, users.surname, users_info.birth, users_info.city
+    FROM users_info
+    JOIN users
+    ON users.info_id = users_info.id
+    WHERE users.id = $1`;
+    const result = (await client.query(sql, [id])).rows;
+
+    const newObj = { ...result[0], ...clientData};
+
+    await client.query('COMMIT');
+    return
+  } catch (error) {
+    await client.query('ROLLBACK');
+    throw new Error(error.message);
+  }
+};
 
 const deleteDataDb = async (id) => {
   const client = await pool.connect();

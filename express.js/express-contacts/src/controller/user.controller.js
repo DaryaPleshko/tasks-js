@@ -24,7 +24,7 @@ route.get('/:id', isValidUserId, async (request, response) => {
   }
 });
 
-route.post('/', async (request, response) => {
+route.post('/', isValidUserBody, async (request, response) => {
   try {
     const { name, surname, birth, city, age } = request.body;
     const data = await createData(name, surname, birth, city, age);
@@ -34,7 +34,7 @@ route.post('/', async (request, response) => {
   }
 });
 
-route.put('/:id', isValidUserId, async (request, response) => {
+route.put('/:id', isValidUserId, isValidUserBody, async (request, response) => {
   try {
     const { id } = request.params;
     const { name, surname, birth, city, age } = request.body;
@@ -45,12 +45,12 @@ route.put('/:id', isValidUserId, async (request, response) => {
   }
 });
 
-route.patch('/:id', isValidUserId, async (request, response) => {
+route.patch('/:id', isValidUserId, isValidUserBody, async (request, response) => {
   try {
     const { id } = request.params;
-    const { name, surname, birth, city, age } = request.body;
-    const data = await patchData(id, name, surname, birth, city, age);
-    return data;
+    const clientData = request.body;
+    const data = await patchData(id, clientData)
+    buildResponse(response, 200, data);
   } catch (error) {
     buildResponse(response, 404, error.message);
   }
