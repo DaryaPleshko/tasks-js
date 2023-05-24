@@ -1,6 +1,7 @@
 const express = require('express');
 const { buildResponse } = require('../helper/buildResponse');
-const { getAllData, getDataById, createData, updateData, deleteData } = require('../servise/user.service');
+const { isValidUserId, isValidUserBody } = require('../helper/validation');
+const { getAllData, getDataById, createData, updateData, patchData, deleteData } = require('../servise/user.service');
 
 const route = express.Router();
 
@@ -13,7 +14,7 @@ route.get('/', async (request, response) => {
   }
 });
 
-route.get('/:id', async (request, response) => {
+route.get('/:id', isValidUserId, async (request, response) => {
   try {
     const { id } = request.params;
     const data = await getDataById(id);
@@ -33,7 +34,7 @@ route.post('/', async (request, response) => {
   }
 });
 
-route.put('/:id', async (request, response) => {
+route.put('/:id', isValidUserId, async (request, response) => {
   try {
     const { id } = request.params;
     const { name, surname, birth, city, age } = request.body;
@@ -44,7 +45,18 @@ route.put('/:id', async (request, response) => {
   }
 });
 
-route.delete('/:id', async (request, response) => {
+route.patch('/:id', isValidUserId, async (request, response) => {
+  try {
+    const { id } = request.params;
+    const { name, surname, birth, city, age } = request.body;
+    const data = await patchData(id, name, surname, birth, city, age);
+    return data;
+  } catch (error) {
+    buildResponse(response, 404, error.message);
+  }
+});
+
+route.delete('/:id', isValidUserId, async (request, response) => {
   try {
     const { id } = request.params;
     const data = await deleteData(id);
