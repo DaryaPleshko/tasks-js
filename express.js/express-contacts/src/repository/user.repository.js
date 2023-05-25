@@ -112,7 +112,7 @@ const patchDataDb = async (id, clientData) => {
   }
 };
 
-const deleteDataDb = async (id) => {
+const deleteDataDb = async id => {
   const client = await pool.connect();
   try {
     await client.query('BEGIN');

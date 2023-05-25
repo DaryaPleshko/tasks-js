@@ -49,7 +49,7 @@ route.patch('/:id', isValidUserId, async (request, response) => {
   try {
     const { id } = request.params;
     const clientData = request.body;
-    const data = await patchData(id, clientData)
+    const data = await patchData(id, clientData);
     buildResponse(response, 200, data);
   } catch (error) {
     buildResponse(response, 404, error.message);
