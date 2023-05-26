@@ -25,7 +25,7 @@ const updateData = async (id, name, surname, birth, city, age) => {
 };
 
 const patchData = async (id, clientData) => {
-  const data = await patchDataDb(id, clientData);      
+  const data = await patchDataDb(id, clientData);           
   return data;
 };
 
