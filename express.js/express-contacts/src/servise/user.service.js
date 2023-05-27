@@ -23,7 +23,7 @@ const updateData = async (id, name, surname, birth, city, age) => {
   if (!data.length) throw new Error(`Array with this id is empty`);
   return data;
 };
-
+             
 const patchData = async (id, clientData) => {
   const data = await patchDataDb(id, clientData);           
   return data;
