@@ -7,7 +7,7 @@ const route = express.Router();
 
 route.get('/', async (request, response) => {
   try {
-    const data = await getAllData();
+    const data = await getAllData();          
     buildResponse(response, 200, data);
   } catch (error) {
     buildResponse(response, 404, error.message);
