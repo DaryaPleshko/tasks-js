@@ -10,7 +10,7 @@ route.get('/', async (request, response) => {
     const data = await getAllData();          
     buildResponse(response, 200, data);
   } catch (error) {
-    buildResponse(response, 404, error.message);
+    buildResponse(response, 404, error.message);          
   }
 });
 
