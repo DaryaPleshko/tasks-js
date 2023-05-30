@@ -3,14 +3,14 @@ const { buildResponse } = require('../helper/buildResponse');
 const { isValidUserId, isValidUserBody } = require('../helper/validation');
 const { getAllData, getDataById, createData, updateData, patchData, deleteData } = require('../servise/user.service');
 
-const route = express.Router();
+const route = express.Router();         
 
 route.get('/', async (request, response) => {
   try {
     const data = await getAllData();          
     buildResponse(response, 200, data);
   } catch (error) {
-    buildResponse(response, 404, error.message);          
+    buildResponse(response, 404, error.message);           
   }
 });
 
