@@ -1,4 +1,4 @@
-const { step, multy, sumArr } = require('./app');
+const { step, multy, sumArr, filterArray, createArray, chackKeyValuePairs, doubleValue, evenValue } = require('./app');
 
 describe('step:', () => {
     test('', () => {
@@ -74,6 +74,35 @@ describe('createArray:', () => {
     });
     test('', () => {
         const result = createArray(['11111', 22222, 33333, 22222]);
+        expect(result).toEqual('ошибка типов данных');
+    });
+});
+
+describe('chackKeyValuePairs:', () => {
+    test('', () => {
+        const result = chackKeyValuePairs({ 1: 'id', 2: 'name' });
+        expect(result).toBe(2);
+    });
+});
+
+describe('doubleValue:', () => {
+    test('', () => {
+        const result = doubleValue({ id: 1, name: 2 });
+        expect(result).toEqual({ id: 2, name: 4 });
+    });
+    test('', () => {
+        const result = doubleValue({ id: 'aaa', name: 2 });
+        expect(result).toEqual({ id: 'aaa', name: 4 });
+    });
+});
+
+describe('evenValue:', () => {
+    test('', () => {
+        const result = evenValue({ id: 1, name: 2, surname: 4 });
+        expect(result).toEqual([2, 4]);
+    });
+    test('', () => {
+        const result = evenValue({ id: 'aaa', name: 2, surname: 4 });
         expect(result).toEqual('ошибка типов данных');
     });
 });

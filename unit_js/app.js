@@ -72,12 +72,46 @@ const createArray = (array) => {
 // 6. На входе статичный объект. Необходимо посчитать количество пар (ключ:
 //     значение) где значение число и вывести количество. Добавить необходимые
 //     проверки.
-//     Написать тест для функции
+
+const chackKeyValuePairs = (obj) => {
+    try {
+        let count = 0;
+        for (const key in obj) if (!isNaN(key)) count++;
+        return count;
+    } catch (error) {
+        return error.message;
+    }
+};
+
 //     7. На входе статичный объект. Необходимо числовые значения удвоить на выходе.
 //     Написать тест для функции
+
+const doubleValue = (obj) => {
+    try {
+        for (const key in obj) if (!isNaN(obj[key])) obj[key] = obj[key] * 2;
+        return obj;
+    } catch (error) {
+        return error.message;
+    }
+};
+
 //     8. На входе статичный объект. Необходимо сформировать массив из всх четных
 //     значений объекта.
 //     Написать тест для функции
+
+const evenValue = (obj) => {
+    try {
+        let arr = [];
+        for (const key in obj) {
+            if (isNaN(obj[key])) throw new Error('ошибка типов данных');
+            if (obj[key] % 2 == 0) arr.push(obj[key]);
+        }
+        return arr;
+    } catch (error) {
+        return error.message;
+    }
+};
+
 //     9. На входе статичный массив [1, 2, 3, 4, 5, 6] и динамическое значение n. Необходимо
 //     разбить данный одномерный массив на маленькие массивы в зависимости от
 //     того, какого число ввел пользователь. Добавить необходимые проверки.
@@ -97,4 +131,4 @@ const createArray = (array) => {
 // '12233’ -> [1, 2, 3]
 // Написать тест для функции
 
-module.exports = { step, multy, sumArr, filterArray, createArray }
+module.exports = { step, multy, sumArr, filterArray, createArray, chackKeyValuePairs, doubleValue, evenValue }
