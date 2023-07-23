@@ -1,0 +1,16 @@
+{
+  "name": "unit_ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jest": "^29.5.3",
+    "jest": "^29.6.1",
+    "ts-jest": "^29.1.1"
+  }
+}
