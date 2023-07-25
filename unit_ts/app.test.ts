@@ -44,10 +44,10 @@ describe('capitalizeString:', () => {
 describe('flattenArray:', () => {
     test('- 1', () => {
         const result = flattenArray([1, 2, [3, 4]]);
-        expect(result).toEqual([1, 2, 3, 4]);
+        expect(result).toEqual([1, 2, 3, 4]);   
     });
     test('- 2', () => {
         const result = flattenArray([]);
         expect(result).toBe('массив пустой');
     });
-});
+});  
