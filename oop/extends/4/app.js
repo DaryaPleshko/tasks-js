@@ -58,7 +58,7 @@ class Triangle extends Figure {
 }
 class Square extends Figure {
     name;
-    side;
+    side; 
 
     setInfoSquare = (name, side) => {
         this.name = name;
