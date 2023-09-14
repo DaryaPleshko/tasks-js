@@ -6,7 +6,7 @@ function Task5() {
     const setInputVal = (event) => {
         setInput(event.target.value);
     }
-    
+      
     return (
         <div>
             <p>{input}</p>
