@@ -7,7 +7,7 @@ function Task5() {
         setInput(event.target.value);
     }
       
-    return (
+    return (   
         <div>
             <p>{input}</p>
             <input onChange={setInputVal} />
