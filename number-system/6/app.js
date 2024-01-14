@@ -5,18 +5,43 @@
 // 145263 –> 654321
 // 123456789 –> 987654321
 
-const check = (num) => {
-    if (num < 0) throw new Error(`Введите целое число`);
+const checkPositiveNumber = (num) => {
+    if (isNaN(num)) throw new Error(`ошибка в данных - не число`);
+    if (num <= 0) throw new Error(`ошибка в данных - число меньше или равно нулю`);
     return true;
-} 
+}
 
-const decreasing = (num) => {
+const reversePositiveNumber = (num) => {
     try {
-        check(num);
-        const sortNum = num.split('').sort().reverse().join('');
-        return sortNum;
+        if (checkPositiveNumber(num)) {
+            let reverseNum = [...num.toString()].map(Number).reverse().join('');
+            return reverseNum;
+        }
     } catch (error) {
         return error.message;
-    } 
+    }
 }
-console.log(decreasing(`145263`));
+console.log(reversePositiveNumber(4638));
+
+
+
+
+
+
+
+
+// const check = (num) => {
+//     if (num < 0) throw new Error(`Введите целое число`);
+//     return true;
+// }
+
+// const decreasing = (num) => {
+//     try {
+//         check(num);
+//         const sortNum = num.split('').sort().reverse().join('');
+//         return sortNum;
+//     } catch (error) {
+//         return error.message;
+//     }
+// }
+// console.log(decreasing(`145263`));

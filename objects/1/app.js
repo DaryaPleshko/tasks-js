@@ -5,8 +5,24 @@
 //   4. Измените значение свойства name на Pete. 
 //   5. Удалите свойство name из объекта
 
-let user = {};
-user.name = 'John';
-user.surname = 'Smith';
-user.name = 'Pete';
-delete user.name;
+
+const obj = {};
+obj.name = 'John';
+obj.surname = 'Smith';
+obj.name = 'Pete';
+delete obj.name;
+
+console.log(obj);
+
+
+
+
+
+
+
+
+// let user = {};
+// user.name = 'John';
+// user.surname = 'Smith';
+// user.name = 'Pete';
+// delete user.name;

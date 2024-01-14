@@ -11,14 +11,32 @@ const json = JSON.parse(`[
         { "id": 5, "label": "GO", "category": "programmingLanguages", "priority": 3 }
 ]`);
 
-const checkArray = (array) => {
+
+const checkJson = (json) => {
     try {
-        if (!Array.isArray(array)) throw new Error(`Пришел не массив`);
-        let newArray = array.filter((el) => el.id % 2 === 0)
-        return newArray;
+        if (!Array.isArray(json)) throw new Error('На выходе не массив');
+        const filtered = json.filter(el => el.id % 2 === 0);
+        return filtered;
     } catch (error) {
         return error.message;
     }
 }
 
-console.log(checkArray(json));
+console.log(checkJson(json));
+
+
+
+
+
+
+// const checkArray = (array) => {
+//     try {
+//         if (!Array.isArray(array)) throw new Error(`Пришел не массив`);
+//         let newArray = array.filter((el) => el.id % 2 === 0)
+//         return newArray;
+//     } catch (error) {
+//         return error.message;
+//     }
+// }
+
+// console.log(checkArray(json));
