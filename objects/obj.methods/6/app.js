@@ -3,14 +3,35 @@
 // ключа – рандомное число от 1 до 100. Вывести каждое значение объекта с
 // помощью values
 
-const createObj = (num) => {
-    let obj = {};
-    for (let i = 0; i < num; i++)  obj[i] = Math.floor(Math.random() * 100);
+const createObj = (n) => {
+    const obj = {};
+    for (let i = 0; i < n; i++) obj[i] = Math.floor(Math.random() * 100);
     return obj;
-};
-const findValues = (obj) => {
-    const arrayValues = Object.values(obj);
-    return arrayValues;
-};
+}
 
-console.log(findValues(createObj(4)));
+const outputObj = (obj) => Object.values(obj)
+
+console.log(outputObj(createObj(7)));
+
+
+
+
+
+
+
+
+
+
+
+
+// const createObj = (num) => {
+//     let obj = {};
+//     for (let i = 0; i < num; i++)  obj[i] = Math.floor(Math.random() * 100);
+//     return obj;
+// };
+// const findValues = (obj) => {
+//     const arrayValues = Object.values(obj);
+//     return arrayValues;
+// };
+
+// console.log(findValues(createObj(4)));
