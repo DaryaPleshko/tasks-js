@@ -6,18 +6,21 @@
 const array = JSON.parse('[1,2,3,4,5]');
 
 const checkType = (array) => {
+    const searchStr = array.some(el => isNaN(el));
+    if (searchStr) throw new Error('there is a string in the array');
     if (!Array.isArray(array)) throw new Error('type error');
     return true;
 }
 
 const findChetNum = (array) => {
     try {
-
+        checkType(array)
+        return array.filter(el => el % 2 == 0);
     } catch (error) {
         return error.message;
     }
 }
-console.log(findChetNum(checkType(array)));
+console.log(findChetNum(array));
 
 
 

@@ -7,12 +7,30 @@
 // "12345“ -> false
 // "a234“ -> false
 
-const check = (pin) => {
+
+const checkPwd = (pwd) => {
     try {
-        if (!/^[\d]{4}$/g.test(pin) && !/^[\d]{6}$/g.test(pin)) throw new Error(`Некорректный ввод`);
+        if (!/^[0-9]{4}$/g.test(pwd) && !/^[0-9]{6}$/g.test(pwd)) throw new Error('не верный ввод')
         return true;
     } catch (error) {
         return error.message;
     }
 }
-console.log(check(`0879`));
+
+console.log(checkPwd('1234'));
+
+
+
+
+
+
+
+// const check = (pin) => {
+//     try {
+//         if (!/^[\d]{4}$/g.test(pin) && !/^[\d]{6}$/g.test(pin)) throw new Error(`Некорректный ввод`);
+//         return true;
+//     } catch (error) {
+//         return error.message;
+//     }
+// }
+// console.log(check(`0879`));

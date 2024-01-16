@@ -5,10 +5,10 @@
 
 const check = (str) => {
     try {
-        if (!/^[A-ZА-Я][a-zа-я]+ [A-ZА-Я][a-zа-я]+\,[0-9]{1,3}$/g.test(str)) throw new Error(`Некорректный ввод`);
+        if (!/^[А-Я][а-я]+ [А-Я][а-я]+,[0-9]{1,3}$/g.test(str)) throw new Error(`Некорректный ввод`);
         return true;
     } catch (error) {
         return error.message;
     }
 }
-console.log(check(`Dasha Pleshko,18`));
+console.log(check(`Плешко Дарья,19`));
