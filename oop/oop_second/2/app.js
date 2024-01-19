@@ -2,11 +2,34 @@
 //принимающая строку, селектор. Необходимо отобазить на странице 
 
 class Elem {
-    html = (str, selector) => {
-        const div = document.querySelector(selector)
+    html(str, selector) {
+        const div = document.querySelector(selector);
         div.innerHTML = str;
     }
 }
 
 const elem = new Elem();
-elem.html('hello', '.result');
+elem.html('HI', 'WORLD');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class Elem {
+//     html = (str, selector) => {
+//         const div = document.querySelector(selector)
+//         div.innerHTML = str;
+//     }
+// }
+
+// const elem = new Elem();
+// elem.html('hello', '.result');

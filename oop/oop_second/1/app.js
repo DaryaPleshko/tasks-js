@@ -5,28 +5,60 @@
 //    иметь метод getMoreInfo(), 
 // который будет выводить информацию о певце: years, birth, style.
 
-
 class Worker {
     constructor(name, surname) {
         this.name = name;
         this.surname = surname;
     }
-
-    getFullName = () => `${this.name} ${this.surname}`;
-
+    getFullName() {
+        return `${this.name} ${this.surname}`;
+    }
 }
 
 class Singer extends Worker {
-    constructor(name, surname, year, birth, style) {
-        super(name, surname)
-        this.year = year;
+    constructor(name, surname, years, birth, style) {
+        super(name, surname);
+        this.years = years;
         this.birth = birth;
         this.style = style;
     }
-
-    getMoreInfo = () => `${this.year} ${this.birth} ${this.style}`;
-
+    getMoreInfo() {
+        return `${this.years} ${this.birth} ${this.style}`;
+    }
 }
 const singer = new Singer(`Dasha`, `Pleshko`, 2004, `27.04.04`, `student`);
-console.log(singer.getFullName()); 
+console.log(singer.getFullName());
 console.log(singer.getMoreInfo()); 
+
+
+
+
+
+
+
+
+
+// class Worker {
+//     constructor(name, surname) {
+//         this.name = name;
+//         this.surname = surname;
+//     }
+
+//     getFullName = () => `${this.name} ${this.surname}`;
+
+// }
+
+// class Singer extends Worker {
+//     constructor(name, surname, year, birth, style) {
+//         super(name, surname)
+//         this.year = year;
+//         this.birth = birth;
+//         this.style = style;
+//     }
+
+//     getMoreInfo = () => `${this.year} ${this.birth} ${this.style}`;
+
+// }
+// const singer = new Singer(`Dasha`, `Pleshko`, 2004, `27.04.04`, `student`);
+// console.log(singer.getFullName());
+// console.log(singer.getMoreInfo()); 
