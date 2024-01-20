@@ -3,49 +3,104 @@
 // соответствующие функции. Добавить проверки на ввод
 
 class Calculator {
-    constructor(firstNum, secomdNum) {
+    constructor(firstNum, secondNum) {
         this.firstNum = firstNum;
-        this.secomdNum = secomdNum;
-        this.isValid();
+        this.secondNum = secondNum;
     }
-
-    isValid = () => { if (isNaN(this.firstNum) || isNaN(this.secomdNum)) throw new Error(`Некорректный ввод`); }
-    summa = () => {
+    checkNum() {
+        if (isNaN(this.firstNum) || isNaN(this.secondNum)) throw new Error('type error');
+        return true;
+    }
+    summary = () => {
         try {
-            this.isValid();
-            return `Сумма = ${this.firstNum + this.secomdNum}`;
+            if (this.checkNum()) return `сумма чисел = ${this.firstNum + this.secondNum}`;
         } catch (error) {
             return error.message;
         }
     }
-    raznost = () => {
+    difference = () => {
         try {
-            this.isValid();
-            return `Разность = ${this.firstNum - this.secomdNum}`;
+            if (this.checkNum()) return `разность чисел = ${this.firstNum - this.secondNum}`;
         } catch (error) {
             return error.message;
         }
     }
-    proizvedenie = () => {
+    productOfNum = () => {
         try {
-            this.isValid();
-            return `Произведение =${this.firstNum * this.secomdNum}`;
+            if (this.checkNum()) return `произведение чисел = ${this.firstNum * this.secondNum}`;
         } catch (error) {
             return error.message;
         }
     }
-    chastnoe = () => {
+    quotientOfNum = () => {
         try {
-            this.isValid();
-            return `Частное = ${this.firstNum / this.secomdNum}`;
+            if (this.checkNum()) return `частное чисел = ${this.firstNum / this.secondNum}`;
         } catch (error) {
             return error.message;
         }
     }
 }
+const calculator = new Calculator(4, 5);
+console.log(calculator.summary());
+console.log(calculator.difference());
+console.log(calculator.productOfNum());
+console.log(calculator.quotientOfNum());
 
-const calculator = new Calculator(4, 3);
-console.log(calculator.summa());
-console.log(calculator.raznost());
-console.log(calculator.proizvedenie());
-console.log(calculator.chastnoe());
+
+
+
+
+
+
+
+
+
+
+
+// class Calculator {
+//     constructor(firstNum, secomdNum) {
+//         this.firstNum = firstNum;
+//         this.secomdNum = secomdNum;
+//         this.isValid();
+//     }
+
+//     isValid = () => { if (isNaN(this.firstNum) || isNaN(this.secomdNum)) throw new Error(`Некорректный ввод`); }
+//     summa = () => {
+//         try {
+//             this.isValid();
+//             return `Сумма = ${this.firstNum + this.secomdNum}`;
+//         } catch (error) {
+//             return error.message;
+//         }
+//     }
+//     raznost = () => {
+//         try {
+//             this.isValid();
+//             return `Разность = ${this.firstNum - this.secomdNum}`;
+//         } catch (error) {
+//             return error.message;
+//         }
+//     }
+//     proizvedenie = () => {
+//         try {
+//             this.isValid();
+//             return `Произведение =${this.firstNum * this.secomdNum}`;
+//         } catch (error) {
+//             return error.message;
+//         }
+//     }
+//     chastnoe = () => {
+//         try {
+//             this.isValid();
+//             return `Частное = ${this.firstNum / this.secomdNum}`;
+//         } catch (error) {
+//             return error.message;
+//         }
+//     }
+// }
+
+// const calculator = new Calculator(4, 3);
+// console.log(calculator.summa());
+// console.log(calculator.raznost());
+// console.log(calculator.proizvedenie());
+// console.log(calculator.chastnoe());
