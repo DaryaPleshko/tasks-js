@@ -16,20 +16,21 @@
 // Необходимо вывести в консоль найденный элемент массива по id если таковой
 // имеется. В противном случае бросить исключение. Добавить проверки 
 
-class ServerGetAll {
-    controller(obj) {
+class ServerById {
+    middleware = (json) => {
+        if (!json.length) throw new Error('объект пуст');
+        return true;
+    }
+    controller = (json) => {
         try {
-            return this.service(obj);
+            this.middleware(json)
+            return this.service(json);
         } catch (error) {
             return error.message;
         }
     }
-
-    service(obj) {
-        return this.repository(obj);
-    }
-
-    repository(obj) {
+    service = (json) => this.repository(json);
+    repository = (json) => {
         const array = [
             { "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
             { "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
@@ -37,13 +38,55 @@ class ServerGetAll {
             { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
             { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
         ];
-        const filtered = array.filter((el) => el.id === obj.id);
-        if (filtered.length === 0) throw new Error('id не существует');
+        const filtered = array.filter(el => el.id === json.id);
         return filtered;
     }
 }
+const serverById = new ServerById();
+console.log(serverById.controller({ "id": "javascript" }));
 
-const obj = { "id": "javascript" }
 
-const serverGetAll = new ServerGetAll();
-console.log(serverGetAll.controller(obj));
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class ServerGetAll {
+//     controller(obj) {
+//         try {
+//             return this.service(obj);
+//         } catch (error) {
+//             return error.message;
+//         }
+//     }
+
+//     service(obj) {
+//         return this.repository(obj);
+//     }
+
+//     repository(obj) {
+//         const array = [
+//             { "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
+//             { "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
+//             { "id": "sql", "label": "SQL", "category": "programmingLanguages", "priority": 2 },
+//             { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
+//             { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
+//         ];
+//         const filtered = array.filter((el) => el.id === obj.id);
+//         if (filtered.length === 0) throw new Error('id не существует');
+//         return filtered;
+//     }
+// }
+
+// const obj = { "id": "javascript" }
+
+// const serverGetAll = new ServerGetAll();
+// console.log(serverGetAll.controller(obj));
