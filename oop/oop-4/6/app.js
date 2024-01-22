@@ -26,7 +26,7 @@ class ServerById {
             return this.service(json);
         } catch (error) {
             return error.message;
-        }
+        }    
     }
     service = (json) => this.repository(json);
     repository(json) {
