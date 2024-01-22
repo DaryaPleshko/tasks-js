@@ -5,34 +5,60 @@
 // экземпляр класса Customer вызвав геттеры собственного класса и суперкласса
 
 class Person {
-    name;
-    surname;
-    setName(name) {
-        this.name = name;
-    }
-    setSurname(surname) {
-        this.surname = surname;
-    }
-    getName() {
-        return this.name;
-    }
-    getSurname() {
-        return this.surname;
-    }
+    setName = (name) => this.name = name;
+    setSurname = (surname) => this.surname = surname;
+    getName = () => this.name;
+    getSurname = () => this.surname;
+}
+class Customer extends Person {
+    setPhone = (phone) => this.phone = phone;
+    getPhone = () => this.phone;
 }
 
-class Customer extends Person {
-    phone;
-    setPhone(phone) {
-        this.phone = phone;
-    }
-    getPhone() {
-        return this.phone;
-    }
-}  
-
 const customer = new Customer();
-customer.setName('Darya');
-customer.setSurname('Pleshko');
-customer.setPhone('+375247862776');
-console.log(`${customer.getName()} ${customer.getSurname()}, ${customer.getPhone()}`);
+customer.setName('dasha');
+customer.setSurname('platonova');
+customer.setPhone('+37355553355')
+console.log(customer.getName(), customer.getSurname(), customer.getPhone());
+
+
+
+
+
+
+
+
+
+
+// class Person {
+//     name;
+//     surname;
+//     setName(name) {
+//         this.name = name;
+//     }
+//     setSurname(surname) {
+//         this.surname = surname;
+//     }
+//     getName() {
+//         return this.name;
+//     }
+//     getSurname() {
+//         return this.surname;
+//     }
+// }
+
+// class Customer extends Person {
+//     phone;
+//     setPhone(phone) {
+//         this.phone = phone;
+//     }
+//     getPhone() {
+//         return this.phone;
+//     }
+// }
+
+// const customer = new Customer();
+// customer.setName('Darya');
+// customer.setSurname('Pleshko');
+// customer.setPhone('+375247862776');
+// console.log(`${customer.getName()} ${customer.getSurname()}, ${customer.getPhone()}`);

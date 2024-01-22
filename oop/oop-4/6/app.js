@@ -14,20 +14,22 @@
 // }`
 // Необходимо вывести в консоль найденный элемент массива по id если таковой
 // имеется. В противном случае бросить исключение. Добавить проверки 
+
 class ServerById {
-    controller(obj) {
+    middleware(json) {
+        if (!json.id) throw new Error('объект пустой');
+        return true;
+    }
+    controller(json) {
         try {
-            return this.service(obj);
+            this.middleware(json);
+            return this.service(json);
         } catch (error) {
             return error.message;
         }
     }
-
-    service(obj) {
-        return this.repository(obj);
-    }
-
-    repository(obj) {
+    service = (json) => this.repository(json);
+    repository(json) {
         const array = [
             { "id": 1, "email": "yesenia@mail.ru" },
             { "id": 2, "email": "hanna@mail.ru" },
@@ -35,12 +37,48 @@ class ServerById {
             { "id": 4, "email": "german@mail.ru" },
             { "id": 5, "email": "maria@mail.ru" }
         ];
-        const filtered = array.filter((el) => el.id === obj.id);
-        if (filtered.length === 0) throw new Error('id не существует');
+        const filtered = array.filter(el => el.id === json.id);
+        if (!filtered.length) throw new Error('совпадений нет');
         return filtered;
     }
 }
-const obj = JSON.parse(`{ "id": 1 }`);
+const serverById = new ServerById();
+console.log(serverById.controller({ "id": 1 }));
 
-const serverGetAll = new ServerById();
-console.log(serverGetAll.controller(obj));
+
+
+
+
+
+
+
+// class ServerById {
+//     controller(obj) {
+//         try {
+//             return this.service(obj);
+//         } catch (error) {
+//             return error.message;
+//         }
+//     }
+
+//     service(obj) {
+//         return this.repository(obj);
+//     }
+
+//     repository(obj) {
+//         const array = [
+//             { "id": 1, "email": "yesenia@mail.ru" },
+//             { "id": 2, "email": "hanna@mail.ru" },
+//             { "id": 3, "email": "stanislau@mail.ru" },
+//             { "id": 4, "email": "german@mail.ru" },
+//             { "id": 5, "email": "maria@mail.ru" }
+//         ];
+//         const filtered = array.filter((el) => el.id === obj.id);
+//         if (filtered.length === 0) throw new Error('id не существует');
+//         return filtered;
+//     }
+// }
+// const obj = JSON.parse(`{ "id": 1 }`);
+
+// const serverGetAll = new ServerById();
+// console.log(serverGetAll.controller(obj));
