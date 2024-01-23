@@ -6,7 +6,6 @@
 // класс включает метод getInfo(), который переопределяет метод базового класса и
 // расширяет его, отображая в консоль информацию о певце: years, birth, style.
 // Необходимо вызвать метод getInfo из 2 экземпляров worker, singer
-
 class Worker {
     constructor(name, surname) {
         this.name = name;
@@ -21,13 +20,48 @@ class Singer extends Worker {
         super(name, surname);
         this.years = years;
         this.birth = birth;
-        this.style = style;        
+        this.style = style;
     }
     getInfo() {
         super.getInfo();
-        console.log(`${this.years} ${this.birth} ${this.style}`);                 
+        console.log(`${this.years} ${this.style} ${this.birth}`);
     }
 }
+const singer = new Singer('dasha', 'platonova', '19', '12.09', 'student');
+const worker = new Worker('dasha', 'platonova');
+singer.getInfo();
+worker.getInfo();
 
-let singer = new Singer(`Darya`, `Pleshko`, 18, `27.04.2004`, `test`);       
-singer.getInfo()
+
+
+
+
+
+
+
+
+
+// class Worker {
+//     constructor(name, surname) {
+//         this.name = name;
+//         this.surname = surname;
+//     }
+//     getInfo() {
+//         console.log(`${this.name} ${this.surname}`);
+//     }
+// }
+// class Singer extends Worker {
+//     constructor(name, surname, years, birth, style) {
+//         super(name, surname);
+//         this.years = years;
+//         this.birth = birth;
+//         this.style = style;
+//     }
+//     getInfo() {
+//         super.getInfo();
+//         console.log(`${this.years} ${this.birth} ${this.style}`);
+//     }
+// }
+
+// let singer = new Singer(`Darya`, `Pleshko`, 18, `27.04.2004`, `test`);
+// singer.getInfo()
