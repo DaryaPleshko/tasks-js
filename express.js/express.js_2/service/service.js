@@ -8,7 +8,7 @@ let array = [
 
 const getData = () => {
     return array;
-}
+}   
 
 const createData = (name, age) => {
     array.push({ name, age });
