@@ -8,31 +8,75 @@ let array = [
 
 const getData = () => {
     return array;
-}   
+}
+
+const getDataById = (id) => {
+    return array.filter(el => el.id == id);
+}
 
 const createData = (name, age) => {
-    array.push({ name, age });
+    array.push({ id: array.length + 1, name, age });
     return array;
 }
 
 const updateData = (id, name, age) => {
-    const filtered = array.filter(el => el.id != id);
-    if (filtered.length !== array.length) {
-        const obj = {
-            id: id,
-            name: name,
-            age: age
-        };
-        filtered.push(obj);
-        return filtered;
-    } else {
-        return `id is empty`;
-    }
+    const index = array.findIndex(el => el.id == id);
+    array[index] = { id, name, age };
+    return array;
 }
 
-function deleteData(id) {       
-    const filtered = array.filter(el => el.id != id);
-    return filtered;      
+const deleteData = (id) => {
+    return array.filter(el => el.id != id);
 }
 
-module.exports = { getData, createData, updateData, deleteData };
+module.exports = { getData, getDataById, createData, updateData, deleteData }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const getData = () => {
+//     return array;
+// }
+
+// const createData = (name, age) => {
+//     array.push({ name, age });
+//     return array;
+// }
+
+// const updateData = (id, name, age) => {
+//     const filtered = array.filter(el => el.id != id);
+//     if (filtered.length !== array.length) {
+//         const obj = {
+//             id: id,
+//             name: name,
+//             age: age
+//         };
+//         filtered.push(obj);
+//         return filtered;
+//     } else {
+//         return `id is empty`;
+//     }
+// }
+
+// function deleteData(id) {
+//     const filtered = array.filter(el => el.id != id);
+//     return filtered;
+// }
+
+// module.exports = { getData, createData, updateData, deleteData };
